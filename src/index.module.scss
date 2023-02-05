@@ -1,0 +1,120 @@
+
+
+.wrapperBot {
+  position: fixed;
+  bottom: 160px;
+  right: 25px;
+  z-index: 100;
+  :global {
+    .btn-start {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(254, 105, 85);
+      padding: 10px;
+      border-radius: 100%;
+    }
+    .box-chat {
+      position: absolute;
+      border-radius: 10px;
+      bottom: 60px;
+      right: -20px;
+      min-width: calc(100vw - 20px);
+      height: 400px;
+      background-color: white;
+      box-shadow: 0 5px 20px rgb(0 0 0 / 10%);
+      .chat-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #032a7a;
+        padding: 10px 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .chat-body {
+        .padded-area {
+          padding: 10px 10px;
+          max-height: 320px;
+          overflow-y: auto;
+        }
+      }
+    }
+    .group-question {
+      margin-bottom: 4px;
+      .question {
+        padding: 10px;
+        background-color: rgb(200, 222, 243);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        margin-bottom: 4px;
+      }
+      .option {
+        padding: 10px;
+        background-color: rgb(224, 234, 243);
+        border-radius: 10px;
+        margin-bottom: 4px;
+        text-align: left;
+        &:hover:enabled {
+          background-color: rgb(175, 213, 247);
+        }
+        &.active {
+          background-color: rgb(92, 171, 240);
+        }
+      }
+    }
+    .answer-form {
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      box-shadow: 0 3px 4px 1px rgb(0 0 0 / 10%),
+        0 2px 2px -4px rgb(0 0 0 / 10%);
+      input:disabled {
+        cursor: not-allowed;
+      }
+      .btn-submit:hover {
+        background-color: rgb(56 189 248);
+      }
+      fieldset[disabled] {
+        label {
+          cursor: not-allowed;
+        }
+        .btn-submit {
+          &:hover {
+            background-color: rgb(125 211 252);
+          }
+          cursor: not-allowed;
+        }
+      }
+    }
+    @media (min-width: 640px) {
+      .box-chat {
+        bottom: 60px;
+        right: 0;
+        min-width: 400px;
+        .chat-body {
+          .padded-area {
+            padding: 10px 10px;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      & {
+        right: 32px;
+      }
+    }
+    @media (min-height: 768px) {
+      .box-chat {
+        height: 500px;
+        .chat-body {
+          .padded-area {
+            max-height: 420px;
+          }
+        }
+      }
+    }
+  }
+}
